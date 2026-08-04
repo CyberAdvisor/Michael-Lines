@@ -1,0 +1,228 @@
+/*
+  michaellines.fyi — shared stylesheet
+  Used by all five pages (index, about, books, blogs, tools).
+  Structure:
+    1. Reset & base
+    2. Layout (container, toolbar, footer)
+    3. Hero (landing page photo + intro)
+    4. Row (repeating two-column pattern used on About/Books/Blogs/Tools)
+    5. Typography helpers
+*/
+
+/* 1. Reset & base ------------------------------------------------------ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: #1a1a1a;
+  background: #ffffff;
+  line-height: 1.7;
+}
+
+a {
+  color: #1f3a5f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 2. Layout -------------------------------------------------------------- */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.toolbar {
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.toolbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.toolbar-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.toolbar-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.toolbar-nav a {
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.toolbar-nav a.active {
+  color: #1f3a5f;
+  font-weight: 600;
+}
+
+footer {
+  border-top: 1px solid #e2e2e2;
+  margin-top: 64px;
+  padding: 24px 0;
+  font-size: 13px;
+  color: #8a8a8a;
+}
+
+/* 3. Hero (landing page only) --------------------------------------------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 56px 0;
+}
+
+.hero-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero-content h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.hero-content p {
+  font-size: 17px;
+  color: #4a4a4a;
+  margin: 0 0 12px;
+}
+
+.hero-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* 4. Row (About / Books / Blogs / Tools) --------------------------------- */
+
+.page-header {
+  padding: 40px 0 8px;
+}
+
+.page-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 28px;
+  align-items: center;
+  padding: 32px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row-image {
+  width: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.row-image img {
+  width: 100%;
+  height: auto;
+}
+
+.row-eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #9a9a9a;
+  margin: 0 0 6px;
+}
+
+.row-content h2 {
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.row-content p {
+  font-size: 15px;
+  color: #4a4a4a;
+  margin: 0 0 10px;
+}
+
+.row-links {
+  font-size: 13px;
+  color: #6a6a6a;
+}
+
+.row-links a {
+  color: #1f3a5f;
+}
+
+/* About page body copy (no row image needed for the bio paragraphs) ------ */
+
+.bio {
+  padding: 8px 0 40px;
+}
+
+.bio p {
+  font-size: 16px;
+  color: #333333;
+  margin: 0 0 18px;
+}
+
+.bio-contact {
+  font-size: 14px;
+  color: #6a6a6a;
+  padding-top: 8px;
+  border-top: 1px solid #eeeeee;
+}
+
+.bio-contact a {
+  color: #1f3a5f;
+}
+
+/* 5. Small screens --------------------------------------------------------- */
+
+@media (max-width: 620px) {
+  .hero,
+  .row {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .hero-photo,
+  .row-image {
+    width: 140px;
+  }
+
+  .toolbar-nav {
+    gap: 16px;
+  }
+}
